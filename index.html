@@ -1,23 +1,712 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "6월 이사 서비스",
+      "provider": {
+        "@type": "Organization",
+        "name": "6월 이사 전문가 그룹",
+        "url": "https://yourdomain.com",
+        "logo": "https://yourdomain.com/logo.png"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "대한민국"
+      },
+      "description": "2026년 6월 이사 전문 서비스로 손 없는 날 맞춤형 포장 이사, 반포장 이사, 일반 이사를 제공합니다. 정확한 6월 이사 비용 견적을 받아보세요.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "6월 이사 서비스 가격",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "6월 포장이사 (2.5톤 기준)"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "550000",
+              "priceCurrency": "KRW",
+              "description": "성수기/손 없는 날 변동 가능. 포장, 운반, 정리 정돈 포함"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "6월 반포장이사 (2.5톤 기준)"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "450000",
+              "priceCurrency": "KRW",
+              "description": "포장만 업체, 정리 고객 직접. 합리적인 6월 이사 비용"
+            }
+          }
+        ]
+      },
+      "url": "https://yourdomain.com"
+    }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        :root {
+            --main-color: #3b5998; /* 신뢰감을 주는 블루 계열 */
+            --accent-color: #ff9800; /* 강조를 위한 오렌지 */
+            --bg-light: #f7f9fc;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            font-weight: 400; /* 기본 폰트 굵기 조정 */
+        }
+        header {
+            background: linear-gradient(135deg, var(--main-color), #4b6cb7);
+            color: white;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+            border-bottom-left-radius: 0; 
+            border-bottom-right-radius: 0; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -1.5px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: var(--main-color);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid var(--accent-color);
+            display: inline-block;
+            text-align: left;
+            letter-spacing: -1px;
+        }
+        h3 {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        main {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            border-top: 5px solid var(--main-color);
+        }
+        p, ul, ol, dl {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1.2rem;
+            text-align: center;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--main-color);
+            color: white;
+            font-weight: 700;
+        }
+        td {
+            background-color: white;
+        }
+        tr:nth-child(even) td {
+             background-color: #f0f4f8;
+        }
+        .price-highlight {
+            font-weight: 900;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 2.5rem auto 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 700;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+            font-size: 1.2rem;
+        }
+        .cta-button:hover {
+            background-color: #e68900;
+            transform: translateY(-5px);
+        }
+        .keyword-tags {
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .keyword-tags a {
+            background-color: #e3f2fd;
+            color: var(--main-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            border: 1px solid var(--main-color);
+        }
+        .keyword-tags a:hover {
+            background-color: #bbdefb;
+        }
+        .external-links ul, .check-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .external-links li, .check-list li {
+            margin-bottom: 15px;
+            padding-left: 28px;
+            position: relative;
+        }
+        .check-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+        }
+        .external-links a {
+            color: var(--main-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .external-links a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        dt {
+            font-weight: 700;
+            color: var(--main-color);
+            font-size: 1.15rem;
+            padding: 15px;
+            background-color: #e6eefc;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            border-left: 5px solid var(--accent-color);
+        }
+        dd {
+            padding: 15px 15px 15px 20px;
+            background-color: #ffffff;
+            border-left: 1px solid var(--border-color);
+            margin-left: 0;
+            margin-bottom: 10px;
+            display: none; /* 초기 상태 숨김 */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        dt.active + dd {
+            display: block;
+            opacity: 1;
+        }
+        .highlight-box {
+            background-color: #fff8e1;
+            border: 2px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-weight: 500;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--main-color);
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="date"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-submit-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+        }
+        .form-submit-button:hover {
+            background-color: #1e7e34;
+        }
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+            color: #6a6a6a;
+            background-color: #e9ecef;
+            border-top: 5px solid var(--accent-color);
+            margin-top: 3rem;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.2rem; }
+            header { padding: 3rem 1rem 2rem; }
+            nav ul { gap: 1rem; flex-wrap: wrap; }
+            section { padding: 2rem 1.5rem; }
+            .keyword-tags { justify-content: flex-start; }
+            .cta-button { padding: 1rem 2rem; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>2026년 6월 이삿날, 완벽한 준비를 위한 모든 정보</h1>
+        <p>손 없는 날 달력부터 이사 비용 절약 팁까지, 전문가의 가이드를 확인하세요.</p>
+        <nav>
+            <ul>
+                <li><a href="#calendar">6월 이사 달력</a></li>
+                <li><a href="#guide">이사 준비 가이드</a></li>
+                <li><a href="#price">비용 및 견적</a></li>
+                <li><a href="#faq">자주 묻는 질문</a></li>
+                <li><a href="#contact">견적 문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section id="calendar">
+            <h2>2026년 6월 이사하기 좋은 날 (손 없는 날) 🗓️</h2>
+            <p>
+                <strong>6월 이삿날</strong>을 정할 때 가장 중요하게 고려되는 것은 바로 **손 없는 날**입니다. **손 없는 날**은 악귀(손)가 없는 날로, 이사나 개업 등 주요 행사를 진행하기에 좋다고 알려져 있습니다. 하지만 이 날은 이사 수요가 집중되어 **6월 이사 비용**이 상승할 수 있으므로, 자신의 상황에 맞는 날짜를 현명하게 선택하는 것이 중요합니다.
+            </p>
+            
+            <h3>2026년 6월 손 없는 날 정보</h3>
+            <p class="highlight-box">
+                2026년 6월의 **손 없는 날**은 총 5일입니다. 이 날짜들은 **6월 포장이사**를 계획하는 분들에게 가장 인기가 많습니다.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>요일</th>
+                        <th>날짜</th>
+                        <th>특징</th>
+                        <th>대체일 고려 사항</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>목요일</td>
+                        <td>**6월 4일**</td>
+                        <td>주중에 있는 손 없는 날로, 주말보다 비용이 비교적 저렴할 수 있습니다.</td>
+                        <td>업무 조율이 가능하다면 최적의 선택이 될 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>금요일</td>
+                        <td>**6월 5일**</td>
+                        <td>주말을 앞둔 손 없는 날로, 높은 수요와 함께 **6월 이사 비용**이 상승하는 경향이 있습니다.</td>
+                        <td>예약 경쟁이 치열하므로 최소 한 달 전 예약이 필수입니다.</td>
+                    </tr>
+                    <tr>
+                        <td>일요일</td>
+                        <td>**6월 14일**</td>
+                        <td>주말 손 없는 날로, 가장 높은 견적가와 예약 난이도를 보입니다.</td>
+                        <td>이사가 잦은 6월 중순, 비용을 절약하려면 피하는 것이 좋습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>화요일</td>
+                        <td>**6월 23일**</td>
+                        <td>6월 말 주중 손 없는 날로, 비교적 여유로운 이사가 가능할 수 있습니다.</td>
+                        <td>월말에 가까워 이사 수요가 다시 증가할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>수요일</td>
+                        <td>**6월 24일**</td>
+                        <td>월말에 가까워지는 시점의 손 없는 날입니다.</td>
+                        <td>평일 이사가 어려운 경우를 제외하고는 주말을 피하는 것이 **이사 비용 절약**에 유리합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>6월 이사 수요 특징 및 비용 절감 팁</h3>
+            <p>
+                6월은 봄 이사 시즌의 막바지이면서도 여름 장마가 시작되기 전이라 이사 수요가 여전히 높은 편입니다. 특히 6월 초와 월말에 이사 수요가 집중되며, 날씨 요인(장마)에 대한 부담으로 **6월 포장이사**나 **2.5톤 용달이사** 예약 경쟁이 치열해집니다.
+                <br>
+                **비용 절감 팁**: 손 없는 날을 피하고, 토요일보다는 일요일 오후나 월요일을 선택하거나, **이사 비수기**인 7~8월을 고려하는 것이 **6월 이사 비용**을 절약하는 확실한 방법입니다. 업체별 **6월 이사 견적**을 최소 3곳 이상 비교하는 것도 중요합니다.
+            </p>
+            
+        </section>
+
+        <hr>
+
+        <section id="guide">
+            <h2>6월 이사 완벽 준비를 위한 단계별 체크리스트 📝</h2>
+            <p>
+                성공적인 **6월 이사**를 위해서는 체계적인 준비가 필수입니다. 이사 한 달 전부터 당일까지 확인해야 할 **이사 체크리스트**를 통해 빠짐없이 준비하고, **6월 이사 비용**을 효율적으로 관리하세요.
+            </p>
+
+            <h3>D-30 (이사 한 달 전): 계획 및 업체 선정</h3>
+            <ul class="check-list">
+                <li>**이사 날짜 확정**: 2026년 6월 손 없는 날 또는 일반 이사일을 확정합니다.</li>
+                <li>**이사 업체 선정**: **6월 이사 전문 업체** 3곳 이상에서 **6월 이사 견적**을 받고 비교 후, 관허업체 여부를 확인하여 계약합니다.</li>
+                <li>**계약서 작성**: 이사 형태, 차량 크기(2.5톤, 5톤 등), 인원, 추가 요금 항목(에어컨, 사다리차 등)을 상세히 명시한 표준 계약서를 작성합니다.</li>
+                <li>**불필요한 짐 정리**: 이사 비용을 줄이기 위해 가구, 가전, 의류 등 버릴 짐을 미리 정리하고 대형 폐기물 스티커를 신청합니다.</li>
+                <li>**새 집 점검**: 이사 갈 집의 도면을 확보하고 가구 배치 구상을 마칩니다.</li>
+            </ul>
+
+            <h3>D-14 (이사 2주 전): 행정 및 이전 신청</h3>
+            <ul class="check-list">
+                <li>**관리사무소 통보**: 출발지와 도착지 관리사무소에 이사 예정일 통보 및 엘리베이터 또는 사다리차 사용 시간/비용을 예약 및 확인합니다.</li>
+                <li>**각종 이전 신청**: 인터넷, 전화, 케이블TV, 정수기, 에어컨 등 가전/통신 이전 설치 서비스를 예약합니다.</li>
+                <li>**은행 업무**: 이사 잔금 이체를 위한 이체 한도액을 미리 확인하고 증액이 필요한 경우 은행에 요청합니다.</li>
+                <li>**주소 변경 서비스**: 우체국 '주소 이전 서비스'를 신청하여 우편물 누락을 방지합니다.</li>
+                <li>**도시가스 예약**: 도시가스 철거(기존 집) 및 설치(새 집)를 예약합니다.</li>
+            </ul>
+            
+
+            <h3>D-3 (이사 3일 전): 최종 점검 및 귀중품 분리</h3>
+            <ul class="check-list">
+                <li>**귀중품 분리**: 현금, 유가증권, 통장, 신용카드, 인감 등 귀중품은 따로 보관할 박스를 마련하여 직접 운반할 준비를 합니다.</li>
+                <li>**당일 사용 물품 포장**: 이사 당일 필요한 세면도구, 충전기, 간단한 의류 등은 별도 박스에 '당일 사용' 표기하여 마지막에 싣고 먼저 내릴 수 있게 준비합니다.</li>
+                <li>**냉장고 정리**: 냉장고의 물을 빼고 음식물은 최소화하여 미리 정리합니다.</li>
+                <li>**잔금 서류 준비**: 계약서, 신분증, 도장, 잔금 및 중개 수수료를 준비합니다.</li>
+            </ul>
+
+            <h3>D-Day (이사 당일): 이사 완료 및 정산</h3>
+            <ul class="check-list">
+                <li>**출발지 정산**: 전기, 가스, 수도 등 공과금을 계량기 기준으로 최종 정산하고 영수증을 확보합니다. (도시가스는 예약된 시간에 안전 점검 및 철거)</li>
+                <li>**가구/가전 사진 촬영**: 이사 시작 전 고가 가구 및 가전의 상태를 사진으로 남겨두어 파손 발생 시 대비합니다.</li>
+                <li>**도착지 점검**: 짐 반입 전 새 집의 하자 여부를 최종 점검합니다.</li>
+                <li>**잔금 지급**: 부동산 잔금을 처리하고 열쇠 또는 카드키를 수령합니다.</li>
+                <li>**이삿짐 확인 및 정산**: 짐 정리가 끝난 후 물품 분실 및 파손 여부를 꼼꼼히 확인하고, 이상이 없을 경우 계약 내용에 따라 잔금을 지불합니다.</li>
+                <li>**전입신고 및 확정일자**: 이사 후 14일 이내에 관할 주민센터 또는 온라인 정부24를 통해 **전입신고** 및 **확정일자**를 받습니다. (미이행 시 과태료 부과)</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="price">
+            <h2>6월 이사 비용 구조 및 견적 비교 가이드</h2>
+            <p>
+                <strong>6월 이사 비용</strong>은 이사 형태, 짐의 양(톤수), 운반 거리, 이사 날짜(손 없는 날/주말), 그리고 작업 환경(사다리차/엘리베이터) 등 다양한 요소에 의해 결정됩니다. 특히 **2.5톤 포장이사**의 경우, 6월은 성수기 가격이 적용될 가능성이 높으므로 정확한 **6월 이사 견적**을 받는 것이 중요합니다.
+            </p>
+
+            <h3>이사 형태별 비용 및 서비스 비교 (2.5톤 기준)</h3>
+            <p>2.5톤 트럭은 보통 원룸이나 1.5룸, 혹은 짐이 적은 2인 가구에 적합합니다. 아래 비용은 대략적인 참고 가격이며, **6월 이삿날**의 요일, 날씨, 거리에 따라 변동 폭이 클 수 있습니다. (VAT 별도)</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>이사 종류</th>
+                        <th>주요 서비스 범위</th>
+                        <th>대략적인 6월 비용</th>
+                        <th>추천 대상</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**포장이사**</td>
+                        <td>포장, 운반, 배치, 정리정돈까지 업체에서 모두 담당합니다.</td>
+                        <td><span class="price-highlight">55만원 ~ 80만원</span></td>
+                        <td>시간적 여유가 없고 편리함을 추구하는 직장인, 신혼부부</td>
+                    </tr>
+                    <tr>
+                        <td>**반포장이사**</td>
+                        <td>업체 포장/운반 및 큰 짐 배치, 잔 짐 포장/정리는 고객이 직접 합니다.</td>
+                        <td><span class="price-highlight">45만원 ~ 65만원</span></td>
+                        <td>**6월 이사 비용**을 아끼면서 기본적인 도움을 받고 싶은 1~2인 가구</td>
+                    </tr>
+                    <tr>
+                        <td>**일반이사**</td>
+                        <td>고객이 모든 짐을 포장하고, 업체는 운반과 상/하차 작업만 담당합니다.</td>
+                        <td><span class="price-highlight">35만원 ~ 50만원</span></td>
+                        <td>짐이 적고, 노동력을 투입하여 **이사 비용**을 최대한 절약하려는 고객</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>6월 이사 견적에 영향을 미치는 추가 요인</h3>
+            <ul>
+                <li>**손 없는 날/주말 여부**: 평일 대비 10~30% 이상 비용 증가.</li>
+                <li>**사다리차 사용료**: 층수별 별도 요금 발생. (보통 5~15만원)</li>
+                <li>**특수 짐**: 에어컨, 벽걸이 TV, 피아노 등 이전 설치 전문가가 필요한 짐은 별도 비용이 추가됩니다.</li>
+                <li>**운반 거리**: 장거리 이사 시 운송비가 할증됩니다.</li>
+                <li>**보관 이사**: 6월에 짐을 잠시 보관해야 하는 경우, 보관료가 추가됩니다.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="law">
+            <h2>이사 관련 법규 및 소비자 보호 정보 (필수 확인)</h2>
+            <p>
+                안전하고 공정한 **6월 이사**를 위해 소비자가 반드시 알아야 할 법적 보호 장치와 기준을 정리했습니다. 이사 피해를 예방하기 위해 계약 전후로 다음 사항을 꼭 확인해야 합니다.
+            </p>
+
+            <h3>화물자동차 운수사업법 및 이사화물 표준약관</h3>
+            <p>
+                이사 서비스는 **화물자동차 운수사업법**의 적용을 받으며, 이사 피해 발생 시 소비자 보호를 위해 **공정거래위원회**에서 제정한 **이사화물 표준약관**이 기준이 됩니다.
+            </p>
+            
+            <ol>
+                <li>**관허업체 이용**: 반드시 정식 허가를 받은 관허업체와 계약해야 피해 발생 시 **적재물배상책임보험**을 통한 정당한 보상을 받을 수 있습니다.</li>
+                <li>**계약서 작성 의무**: 이사 업체는 반드시 **이사화물운송계약서**를 작성하여 고객에게 교부해야 하며, 계약서에는 운임, 부대 서비스 요금, 보험 가입 여부 등이 명시되어야 합니다.</li>
+                <li>**견적 초과 청구 금지**: 이사 업체는 견적서에 기재된 금액을 초과하여 운임을 청구할 수 없습니다. (단, 고객의 요청으로 추가 서비스가 발생한 경우는 제외)</li>
+                <li>**피해 보상 기간**: 물품 파손이나 멸실이 발생했을 경우, 고객이 이사 화물을 인도받은 날로부터 **5년간** 사업자에게 손해배상 책임이 존속합니다. 피해 발생 시에는 즉시 사진 등의 증거를 확보하고 사업자에게 통보해야 합니다.</li>
+            </ol>
+            
+            <p class="highlight-box">
+                **주의**: 귀금속, 현금, 유가증권 등 고객이 휴대할 수 있는 귀중품은 이사 화물로 인수 거절 대상이 될 수 있으며, 파손 시 보상 책임이 제한되므로 반드시 고객이 직접 운반해야 합니다.
+            </p>
+
+            <h3>전입신고 및 확정일자</h3>
+            <p>
+                **전입신고**는 이사 후 **14일 이내**에 관할 주민센터에 신고해야 하며, 미이행 시 과태료가 부과될 수 있습니다. 전월세 계약의 경우, 새로운 주소지에서 **확정일자**를 받는 것은 임차인의 **대항력 및 우선변제권**을 확보하는 데 필수적입니다. 이사 당일 또는 직후에 반드시 처리해야 **6월 이사**에 따른 법적 보호를 받을 수 있습니다.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <p>
+                **6월 이삿날**을 준비하는 고객들이 가장 궁금해하는 질문들을 모았습니다.
+            </p>
+            <dl>
+                <dt tabindex="0" aria-expanded="false">6월 이사는 성수기인가요? 비용이 많이 오르나요?</dt>
+                <dd>6월은 3월~6월 이사 성수기 기간에 해당하여 이사 수요가 높은 편입니다. 특히 손 없는 날과 주말에 이사가 집중되어 평일 비수기 대비 10%~30% 정도 **6월 이사 비용**이 상승할 수 있습니다. 가능한 한 평일 오전 이사를 예약하고, 3곳 이상 견적을 비교하는 것이 비용 절약의 핵심입니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">2.5톤 포장이사로 충분한 짐의 양은 어느 정도인가요?</dt>
+                <dd>**2.5톤 포장이사**는 보통 짐이 많은 원룸, 1.5룸, 또는 기본적인 가구(침대, 냉장고, 세탁기 등)와 생활 짐이 적당히 있는 소형 빌라/아파트(구 10~15평) 2인 가구에 적합합니다. 짐의 부피가 애매하다면, 반드시 방문 견적을 통해 2.5톤으로 충분한지, 5톤이 필요한지 전문가의 정확한 판단을 받아야 합니다.</dd>
+
+                <dt tabindex="0" aria-expanded="false">이사 당일, 예상치 못한 추가 요금은 어떻게 방지해야 하나요?</dt>
+                <dd>추가 요금 분쟁을 막기 위해서는 계약 시 **표준 계약서**에 모든 추가 항목(사다리차 비용, 에어컨 탈부착, 특수 짐, 폐기물 처리 등)을 명확하게 명시해야 합니다. 견적 시 짐 목록을 정확하게 알리고, 구두 계약보다는 서면 계약을 필수로 진행하며, 계약 전후로 견적 내용을 꼼꼼하게 확인하십시오.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">보관 이사도 가능한가요? 6월에 짐을 잠시 보관해야 할 때의 주의사항은?</dt>
+                <dd>네, 보관 이사(일반이사 또는 포장이사 후 일정 기간 짐 보관)도 가능합니다. 보관 기간 동안 짐의 멸실, 훼손 방지를 위해 보관 장소(창고의 청결 및 습도 관리)를 확인해야 하며, 보관료와 보험 적용 여부를 계약서에 명확히 기재해야 합니다.</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>6월 이삿날 맞춤 견적 신청 (체류 시간 증진) 📞</h2>
+            <p>
+                정확한 **6월 이사 비용**과 **2026년 6월 손 없는 날** 맞춤 견적을 받아보세요. 고객님의 정보는 오직 견적 산출에만 사용되며, 문의 내용이 상세할수록 정확한 **6월 포장이사 견적**을 받아볼 수 있습니다.
+            </p>
+
+            <form action="https://yourdomain.com/submit_estimate" method="POST">
+                <div class="form-group">
+                    <label for="name">성함 (필수)</label>
+                    <input type="text" id="name" name="name" required placeholder="고객님의 성함을 입력해 주세요">
+                </div>
+                <div class="form-group">
+                    <label for="phone">연락처 (필수)</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{2,3}[-]{0,1}[0-9]{3,4}[-]{0,1}[0-9]{4}" placeholder="010-0000-0000 형태로 입력">
+                </div>
+                <div class="form-group">
+                    <label for="moving_date">희망 이사 날짜 (필수: 2026년 6월)</label>
+                    <input type="date" id="moving_date" name="moving_date" required min="2026-06-01" max="2026-06-30" value="2026-06-04">
+                </div>
+                <div class="form-group">
+                    <label for="moving_type">희망 이사 형태</label>
+                    <select id="moving_type" name="moving_type">
+                        <option value="포장이사">포장이사 (모두 맡김)</option>
+                        <option value="반포장이사">반포장이사 (포장만 업체)</option>
+                        <option value="일반이사">일반이사 (운반만 업체)</option>
+                        <option value="보관이사">보관이사 (일정 기간 보관 포함)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="truck_size">예상 차량 톤수 (짐의 양)</label>
+                    <select id="truck_size" name="truck_size">
+                        <option value="2.5톤">2.5톤 (원룸, 1.5룸, 소형 2인 가구)</option>
+                        <option value="5톤">5톤 (일반 아파트 20~25평형)</option>
+                        <option value="1톤">1톤 (소형 원룸, 짐 극소)</option>
+                        <option value="방문견적요청">잘 모르겠어요 (방문 견적 요청)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start_address">출발지 주소 (상세)</label>
+                    <input type="text" id="start_address" name="start_address" placeholder="시/도 및 건물 종류(아파트, 빌라, 주택) 및 층수">
+                </div>
+                <div class="form-group">
+                    <label for="end_address">도착지 주소 (상세)</label>
+                    <input type="text" id="end_address" name="end_address" placeholder="시/도 및 건물 종류(아파트, 빌라, 주택) 및 층수">
+                </div>
+                <div class="form-group">
+                    <label for="special_items">특수 짐 및 요청 사항 (추가 비용 발생 가능 항목)</label>
+                    <textarea id="special_items" name="special_items" placeholder="에어컨 탈부착, 벽걸이 TV 이전, 피아노, 돌침대 유무, 사다리차 사용 여부 등을 상세히 입력해 주세요."></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit-button">2026년 6월 이사 무료 견적 신청 완료</button>
+            </form>
+        </section>
+        
+        <hr>
+
+        <section class="external-links">
+            <h2>신뢰성 있는 이사 관련 외부 정보 🔗</h2>
+            <p>
+                **6월 이삿날**을 준비하면서 참고할 수 있는 공신력 있는 외부 자료입니다.
+            </p>
+            <ul>
+                <li><a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=666" target="_blank">이사 관련 법규 및 체크리스트 (찾기 쉬운 생활법령정보)</a></li>
+                <li><a href="https://www.ftc.go.kr/www/cpw/service/selectBusi.do?key=670&busiType=08" target="_blank">공정거래위원회 이사화물 표준약관 전문 확인</a></li>
+                <li><a href="https://www.ftc.go.kr/www/cpw/service/selectBusi.do?key=670&busiType=08" target="_blank">이사 피해 구제 및 소비자 분쟁 해결 기준 (한국소비자원)</a></li>
+                <li><a href="https://www.gov.kr/main?a=AA020InfoCapFormApp&apl_type=R200&form_id=310000000010" target="_blank">정부24 온라인 전입신고 및 확정일자 받는 방법 안내</a></li>
+                <li><a href="https://www.epost.go.kr/main.retrieveMain.dev" target="_blank">우체국 주소 이전 서비스 신청 (우편물 자동 이전)</a></li>
+                <li><a href="https://namu.wiki/w/%ED%8F%AC%EC%9E%A5%EC%9D%B4%EC%82%AC" target="_blank">포장이사 관련 배경 지식 (나무위키)</a></li>
+            </ul>
+        </section>
+
+        <div class="keyword-tags" aria-label="관련 이사 키워드">
+            <a href="#calendar">2026년 6월 손 없는 날</a>
+            <a href="#price">6월 이사 비용</a>
+            <a href="#price">6월 포장이사 견적</a>
+            <a href="#guide">이사 체크리스트</a>
+            <a href="#contact">6월 용달 이사</a>
+            <a href="#law">이사화물 표준약관</a>
+            <a href="#calendar">6월 주말 이사 가격</a>
+            <a href="#price">2.5톤 포장이사 비용</a>
+        </div>
+        
     </main>
-  </body>
-</html>
+
+    <footer>
+        <p>&copy; 2026 6월 이사 전문가 그룹. 모든 권리 보유. | **6월 이삿날** 최적화 가이드 제공</p>
+    </footer>
+
+    <script>
+        // FAQ 아코디언 기능 (접기/펼치기)
+        document.querySelectorAll('dl dt').forEach((dt) => {
+            dt.addEventListener('click', () => {
+                const dd = dt.nextElementSibling;
+                const isActive = dt.classList.contains('active');
+                
+                // 모든 FAQ 닫기
+                document.querySelectorAll('dl dt').forEach(item => {
+                    item.classList.remove('active');
+                    item.setAttribute('aria-expanded', 'false');
+                    item.nextElementSibling.style.display = 'none';
+                    item.nextElementSibling.style.opacity = '0';
+                });
+
+                // 클릭된 FAQ 열기
+                if (!isActive) {
+                    dt.classList.add('active');
+                    dt.setAttribute('aria-expanded', 'true');
+                    dd.style.display = 'block';
+                    // 트랜지션 효과를 위해 setTimeout 사용
+                    setTimeout(() => {
+                        dd.style.opacity = '1';
+                    }, 10); 
+                }
+            });
+            dt.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    dt.click();
+                }
+            });
+        });
+
+        // 폼 제출 방지 (예시)
+        document.querySelector('#contact form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('견적 문의가 성공적으로 접수되었습니다. 곧 전문가가 연락드리겠습니다. (실제 서비스에서는 서버로 데이터를 전송해야 합니다)');
+        });
+
+        // 2026년 6월 손 없는 날 하이라이트 (선택 사항)
+        const movingDateInput = document.getElementById('moving_date');
+        if (movingDateInput) {
+            movingDateInput.addEventListener('change', function() {
+                const value = this.value;
+                const sonnunnal = ['2026-06-04', '2026-06-05', '2026-06-14', '2026-06-23', '2026-06-24'];
+                if (sonnunnal.includes(value)) {
+                    alert('선택하신 날짜는 이사 수요가 높은 2026년 6월 손 없는 날입니다. 예약 경쟁이 치열할 수 있으니 빠른 확정 부탁드립니다.');
+                }
+            });
+        }
+    </script>
+</body>
+  
